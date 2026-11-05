@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: payment-processing-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/payment_processing}
+    username: ${DB_USERNAME:payment_app}
+    password: ${DB_PASSWORD:local_dev_only}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
